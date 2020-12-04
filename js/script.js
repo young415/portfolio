@@ -32,9 +32,6 @@ $(function(){
 		re_layout()
 	})
 	
-	$(".project_zone").scroll(function(){
-		
-	})
 	
 	$("body, html").on("mousewheel DOMMouseScroll", function(e){
 		var delta = e.originalEvent.wheelDelta;
@@ -79,21 +76,21 @@ $(function(){
 		
 		if(introTop==windowScroll){
 			
-			$(".about_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
+			$(".about_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
 			
 			
 		} //about이 scrollTop에 닿을 때
 		
 		if(aboutTop==windowScroll){
 			
-			$(".project_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
+			$(".project_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
 			
 			
 		} //project가 scrollTop에 닿을 때
 		
 		if(projectTop==windowScroll){
 			
-			$(".contact_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
+			$(".contact_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
 			
 		} //about이 scrollTop에 닿을 때
 		
@@ -123,24 +120,28 @@ $(function(){
 		var contactTop = $("#page3").offset().top;
 			console.log("contact-offset-top : " + contactTop)	
 			
-		if(introTop==windowScroll){
+        switch(n){
+            case 1 :
+                $(".about_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+            
+			console.log("introTop : " +introTop)
+			console.log("windowScroll : " +windowScroll)
+            break;
+            case 2 :
+                $(".project_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
 			
-			$(".about_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
-			
-		} //about이 scrollTop에 닿을 때
-		
-		if(aboutTop==windowScroll){
-			
-			$(".project_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
-			
-			
-		} //project가 scrollTop에 닿을 때
-		
-		if(projectTop==windowScroll){
-			
-			$(".contact_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
-			
-		} //about이 scrollTop에 닿을 때
+			console.log("aboutTop : " +aboutTop)
+			console.log("windowScroll : " +windowScroll)
+            break;
+            case 3 :
+                $(".contact_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+			console.log("projectTop : " +projectTop)
+			console.log("windowScroll : " +windowScroll)
+            break;
+            default :
+            break;
+              
+        }
 		
 	}); //사이드 버튼 클릭
 	
@@ -203,24 +204,28 @@ $(function(){
 		var contactTop = $("#page3").offset().top;
 			console.log("C-contact-offset-top : " + contactTop)
 		
-		if(aboutTop==windowScroll){
+        switch(n){
+            case 1 :
+                $(".about_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+            
+			console.log("introTop : " +introTop)
+			console.log("windowScroll : " +windowScroll)
+            break;
+            case 2 :
+                $(".project_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
 			
-			$(".about_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
-			
-		} //about이 scrollTop에 닿을 때
-		
-		if(projectTop==windowScroll){
-			
-			$(".project_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
-			
-			
-		} //project가 scrollTop에 닿을 때
-		
-		if(contactTop==windowScroll){
-			
-			$(".contact_title").delay(300).animate({paddingTop : "50px", opacity: 1}, 1000)
-			
-		} //contact가 scrollTop에 닿을 때
+			console.log("aboutTop : " +aboutTop)
+			console.log("windowScroll : " +windowScroll)
+            break;
+            case 3 :
+                $(".contact_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+			console.log("projectTop : " +projectTop)
+			console.log("windowScroll : " +windowScroll)
+            break;
+            default :
+            break;
+            
+        }
 	})
 	
 	$(".button_hover").hover(function(){
@@ -237,6 +242,8 @@ $(function(){
 			$(".item_wrap").not("."+value).hide();
 			$(".item_wrap").filter("."+value).show()
 		}
+		$(this).parent().siblings().removeClass("on_title")
+		$(this).parent().addClass("on_title")
 	}); //project 해당 항목 보이게 하기
 	
 	//project view more에서 아이콘 hover 시 explain 드러나게 하기
@@ -325,7 +332,7 @@ $(function(){
 		$(".project_pop_wrap, .project_pop_wrap_bg").stop().fadeOut();
 	})
 	
-	$(".project_pop_wrap, .project_pop_wrap_bg").on("scroll touchmove mousewheel", function(e){
+	$(".project_pop_wrap, .project_pop_wrap_bg, .full_nav").on("scroll touchmove mousewheel", function(e){
 		e.preventDefault();
 		e.stopPropagation();
 		return false

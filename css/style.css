@@ -16,9 +16,14 @@
 
 .full_nav_container{position: fixed; bottom: 10vh; left: 10vw; transition: all 0.2s}
 .full_nav_container ul{}
-.full_nav_container ul li{position: relative; font-size: 7rem; font-family: m-bold; line-height: 1; color: #f1f1f1; text-transform: uppercase; margin-bottom: 7%; transition: all 0.2s}
+.full_nav_container ul li{position: relative; font-size: 7rem; font-family: m-bold; line-height: 1; color: #f1f1f1; text-transform: uppercase; margin-bottom: 7%; transition: all 0.2s;}
+.full_nav_container ul li{}
 .full_nav_container ul li:last-child{margin-bottom: 0}
-.full_nav_container ul li a{display: inline-block}
+.full_nav_container ul li::before{}
+.full_nav_container ul li span{display: inline-block; cursor: pointer; position: relative}
+.full_nav_container ul li span::before{content: attr(data-text); position: absolute; color: #191919; width: 0; transition: all .5s; white-space: nowrap; overflow: hidden}
+.full_nav_container ul li span::after{content: ""; width: 0; height: 100%; position: absolute; background: #f1f1f1; left: 0; top: 0; transition: all .5s; z-index: -1}
+.full_nav_container ul li span:hover::before, .full_nav_container ul li span:hover::after{width: 100%;}
 
 /*hamburger-icon*/
 .open_menu{width: 40px; height: 40px; float: right; transition: all 0.4s ease/*cubic-bezier(0.165, 0.84, 0.44, 1)*/; cursor: pointer; margin-top: 20px;}
@@ -69,15 +74,15 @@
 
 /*intro*/
 .intro_area{background: #f1f1f1}
-.intro{width: 100vw; height: 100vh; background: transparent; padding-top: 80px; box-sizing: border-box;}
+.intro{width: 100vw; height: 100vh; background: transparent; padding-top: 80px; box-sizing: border-box; overflow: hidden}
 
 
 /*about me*/
 .about_area{background: #f1f1f1}
-.about{width: 100vw; height: 100vh; padding-top: 80px; box-sizing: border-box;}
+.about{width: 100vw; height: 100vh; padding-top: 80px; box-sizing: border-box; overflow: hidden}
 .about_title{font-family: m-bold; font-size: 4rem; display: flex; justify-content: center; padding-top: 100px; opacity: 0; transition: all 0.2s}
-.about_contents{padding-top: 100px; box-sizing: border-box; height: 100vh; width: 50vw; position: relative; margin: 0 auto;}
-.about_img{width: 440px; height: 500px; cursor: pointer}
+.about_contents{padding-top: 100px; box-sizing: border-box; height: 100vh; width: 50vw; position: relative; margin: 0 auto; transition: all .2s}
+.about_img{width: 440px; height: 500px; cursor: pointer; transition: all .2s}
 .about_img>div{width: 110px; height: 500px; float: left; transition: all .5s}
 .about_img1{background-image: url(../img/about/about.png); background-repeat: no-repeat; background-size: cover; background-position: 0 100px}
 .about_img2{background-image: url(../img/about/about.png); background-repeat: no-repeat; background-size: cover; background-position: -110px 50px;}
@@ -87,18 +92,19 @@
 .about_img:hover .about_img2{background-position: -110px 0}
 .about_img:hover .about_img3{background-position: -220px 0}
 .about_img:hover .about_img4{background-position: -330px 0}
-.about_text{height: 500px; position: absolute; top: 100px; right: 0; background: transparent; width: 490px; z-index: 1;  backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); padding: 10px;}
-.about_text h3{font-family: m-bold; font-size: 1.7rem; line-height: 2}
-.about_text p{font-family: regular; font-size: 1.2rem; line-height: 1.5}
+.about_text{height: 500px; position: absolute; top: 100px; right: 0; background: transparent; width: 490px; z-index: 1;  backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); padding: 10px; transition: all .2s}
+.about_text h3{font-family: m-bold; font-size: 1.7rem; line-height: 2; transition: all .2s}
+.about_text p{font-family: regular; font-size: 1.25rem; line-height: 1.5; transition: all .2s}
 
 /*project*/
 .project_area{background: #f1f1f1}
-.project{width: 100vw; height: 100vh; padding-top: 80px; box-sizing: border-box;}
-.project_title{font-family: m-bold; font-size: 4rem; display: flex; justify-content: center; padding-top: 100px; opacity: 0; box-sizing: border-box; transition: all 0.2s}
-.project_subtitle{width: 45vw; height: 4vh; margin: 2vh auto; display: flex; justify-content: space-around; align-items: center}
+.project{width: 100vw; height: 100vh; padding-top: 80px; box-sizing: border-box; overflow: hidden}
+.project_title{font-family: m-bold; font-size: 4rem; display: flex; justify-content: center; padding-top: 100px; opacity: 0; box-sizing: border-box; transition: all 0.2s;}
+.project_subtitle{width: 45vw; height: 4vh; margin: 2vh auto; display: flex; justify-content: space-around; align-items: center;}
 .project_subtitle li{overflow: hidden;}
 .project_subtitle li:last-child{margin-right: 0}
-.project_subtitle li a{font-family: m-bold; font-size: 1.6rem; display: inline-block; position: relative; overflow: hidden; height: 1.1em; transition: all 0.35s ease; line-height: 1.1em}
+.project_subtitle li a{font-family: m-bold; font-size: 1.6rem; display: inline-block; position: relative; overflow: hidden; height: 1.1em; transition: all 0.35s ease; line-height: 1.1em; opacity: .6}
+.project_subtitle li.on_title a{opacity: 1}
 .project_subtitle li a:before{content: attr(data-text); position: absolute; top: -1.5em}
 
 .project_zone_wrap{width: 50vw; height: 68vh; margin: 0 auto; overflow: auto; text-align: center}
@@ -110,7 +116,8 @@
 .item{width: 250px; height: 200px; background: #f1f1f1; position: absolute}
 .view_more{width: 50px; height: 200px; background: #f1f1f1; position: absolute; z-index: 1; right: -50px; top: 0; transition: all 0.4s; opacity: 0}
 .icon_wrap{width: 50px; height: 130px; margin-top: 70px; display: flex; flex-flow: column nowrap; justify-content: space-around; align-items: center;}
-.icon_wrap .icon_border{width: 28px; height: 28px; border: 3px solid #191919; border-radius: 50%; position: relative; transition: all 0.2s; overflow: hidden; cursor: pointer;}
+.icon_wrap .icon_border{width: 28px; height: 28px; border: 3px solid #191919; border-radius: 50%; position: relative; transition: all 0.2s; overflow: hidden;}
+.icon_wrap .view_more_wrap, .icon_wrap .link_wrap{cursor: pointer}
 
 .icon_border a{display: block}
 .icon_border img{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9)}
@@ -126,7 +133,7 @@
 
 .icon_explain_wrap{width: 190px; height: 130px; position: absolute; display: flex; flex-flow: column nowrap; justify-content: space-around; bottom: 0; align-items: flex-end}
 .icon_explain_wrap>div{background: #f1f1f1; height: 30px; border-radius: 20px; line-height: 30px; font-family: m-light; font-weight: bold; transition: all 0.3s; box-shadow: 0px 0px 5px rgba(51,51,51,.5); display: inline-block; padding: 0 10px;}
-.icon_explain_wrap .info_explain{opacity: 0}
+.icon_explain_wrap .info_explain{opacity: 0;}
 .icon_explain_wrap .view_more_explain{opacity: 0}
 .icon_explain_wrap .link_explain{opacity: 0}
 
@@ -300,14 +307,14 @@
 
 /*project popup button*/
 .button_wrap{width: 1060px; height: 40px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)}
-.button_wrap li{font-size: 2rem; color: #f1f1f1; text-shadow: 0px 0px 5px rgba(51,51,51,.8); cursor: pointer}
+.button_wrap li{font-size: 2rem; color: #f1f1f1; text-shadow: 0px 0px 5px rgba(51,51,51,.8); cursor: pointer; transition: all .2s}
 .button_wrap .prev_btn{float: left;}
 .button_wrap .next_btn{float: right}
 
 
 /*contact me*/
 .contact_area{background: #f1f1f1}
-.contact{width: 100vw; height: 100vh; padding-top: 80px; box-sizing: border-box;}
+.contact{width: 100vw; height: 100vh; padding-top: 80px; box-sizing: border-box; overflow: hidden}
 .contact_title{font-family: m-bold; font-size: 4rem; display: flex; justify-content: center; padding-top: 100px; opacity: 0; box-sizing: border-box; transition: all 0.2s}
 .contact_contents{height: 100vh; width: 100vw; display: flex; justify-content: center; margin-top: 20vh}
 .contact_object{width: 1100px; height: 350px; display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center; transition: all .2s}

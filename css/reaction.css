@@ -8,7 +8,18 @@
 	.full_nav_container ul li{font-size: 6.5rem; margin-bottom: 7%}
 	
 	.about_title, .project_title, .contact_title{font-size: 3.4rem}
+	
+	/*about*/
+	.about_contents{width: 90vw;}
+	.about_img{}
+	.about_text{width: 400px;}
+	.about_text h3{font-size: 1.6rem}
+	.about_text p{font-size: 1.15rem}
+	
+	/*project*/
 	.project_subtitle li a{font-size: 1.4rem}
+	.popup_contents div{background-size: contain; background-position: center center; background-repeat: no-repeat; width: 960px; height: 630px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8);}
+	.button_wrap{width: 800px;}
 	
 	/*contact me*/
 	.contact_object{width: 800px;}
@@ -37,7 +48,7 @@
 	body{background: yellow}
 	.top_nav{width: 94vw;}
 	.full_nav_container{top: 30vh; left: 10vw}
-	.full_nav_container ul li{font-size: 5rem; margin-bottom: 15%}
+	.full_nav_container ul li{font-size: 4.5rem; margin-bottom: 15%}
 	.intro_text{font-size: 5rem}
 	.typed-cursor{font-size: 4rem}
 	
@@ -45,7 +56,20 @@
 	
 	.about_title, .project_title, .contact_title{font-size: 2.5rem}
 	.open_menu{width: 30px;}
+	
+	/*project*/
 	.project_subtitle li a{font-size: 1.3rem}
+	.popup_contents div{background-size: contain; background-position: center center; background-repeat: no-repeat; width: 960px; height: 630px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.6);}
+	.button_wrap{width: 600px;}
+	.button_wrap li{font-size: 1.5rem}
+	
+	/*about*/
+	.about{overflow: hidden}
+	.about_contents{width: 90vw; padding-top: 0; display: flex; flex-direction: column; align-items: center; justify-content: space-between}
+	.about_img{transform: scale(0.6); margin-top: -70px}
+	.about_text{text-align: center; position: static; margin-top: -320px; height: 400px}
+	.about_text h3{font-size: 1.5rem; line-height: 1.9}
+	.about_text p{font-size: 1.15rem; line-height: 1.4}
 	
 	/*contact me*/
 	.contact_object{width: 350px; height: 800px; flex-flow: column nowrap;margin-top: -20vh; justify-content: space-around; padding: 30px 0 0 0; box-sizing: border-box}
@@ -91,6 +115,24 @@
 	.aside{display: none}
 	
 	.about_title, .project_title, .contact_title{font-size: 2.2rem; margin-top: -4vh}
+	
+	/*project*/
+	.project_subtitle li a{font-size: 1.3rem}
+	.popup_contents div{background-size: contain; background-position: center center; background-repeat: no-repeat; width: 960px; height: 630px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.35);}
+	.button_wrap{width: 390px;}
+	.button_wrap li{font-size: 1.25rem}
+	
+	/*about*/
+	.about_contents{width: 90vw; padding-top: 0; display: flex; flex-direction: column; align-items: center; justify-content: space-between}
+	.about_img{transform: scale(0.5); margin-top: -110px}
+	.about_text{text-align: center; position: static; margin-top: -320px; height: 400px;}
+	.about_text h3{font-size: 1.35rem; line-height: 2}
+	.about_text p{font-size: 1.1rem; line-height: 1.4}
+	
+	/*project*/
+	.project_subtitle li a{font-size: 1.15rem}
+	.project_zone_wrap{width: 70vw}
+	.project_subtitle{width: 60vw;}
 	
 	/*contact me*/
 	.contact_object{width: 350px; height: 700px; padding: 30px 0 0 0; box-sizing: border-box;}
