@@ -1,5 +1,8 @@
+window.alert("프로젝트 페이지로 넘어갈 시 약간의 버벅거림이 발생합니다. 오류를 찾는 중이니 감안하고 감상해주시길 부탁드립니다!😊")
+
 $(function(){
 	
+    
 	var n=0; //pageIndex
 	var moving = false;
 	
@@ -76,21 +79,21 @@ $(function(){
 		
 		if(introTop==windowScroll){
 			
-			$(".about_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+			$(".about_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
 			
 			
 		} //about이 scrollTop에 닿을 때
 		
 		if(aboutTop==windowScroll){
 			
-			$(".project_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+			$(".project_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
 			
 			
 		} //project가 scrollTop에 닿을 때
 		
 		if(projectTop==windowScroll){
 			
-			$(".contact_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+			$(".contact_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
 			
 		} //about이 scrollTop에 닿을 때
 		
@@ -122,19 +125,19 @@ $(function(){
 			
         switch(n){
             case 1 :
-                $(".about_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+                $(".about_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
             
 			console.log("introTop : " +introTop)
 			console.log("windowScroll : " +windowScroll)
             break;
             case 2 :
-                $(".project_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+                $(".project_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
 			
 			console.log("aboutTop : " +aboutTop)
 			console.log("windowScroll : " +windowScroll)
             break;
             case 3 :
-                $(".contact_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+                $(".contact_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
 			console.log("projectTop : " +projectTop)
 			console.log("windowScroll : " +windowScroll)
             break;
@@ -206,19 +209,19 @@ $(function(){
 		
         switch(n){
             case 1 :
-                $(".about_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+                $(".about_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
             
 			console.log("introTop : " +introTop)
 			console.log("windowScroll : " +windowScroll)
             break;
             case 2 :
-                $(".project_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+                $(".project_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
 			
 			console.log("aboutTop : " +aboutTop)
 			console.log("windowScroll : " +windowScroll)
             break;
             case 3 :
-                $(".contact_title").delay(300).stop().animate({paddingTop : "50px", opacity: 1}, 1000)
+                $(".contact_title").delay(300).stop().animate({paddingTop : "40px", opacity: 1}, 1000)
 			console.log("projectTop : " +projectTop)
 			console.log("windowScroll : " +windowScroll)
             break;
