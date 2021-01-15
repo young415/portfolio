@@ -132,7 +132,7 @@
 .icon_border:hover .icon_white{opacity: 1}
 
 .icon_explain_wrap{width: 152px; height: 104px; position: absolute; display: flex; flex-flow: column nowrap; justify-content: space-around; bottom: 0; align-items: flex-end}
-.icon_explain_wrap>div{background: #f1f1f1; height: 24px; border-radius: 16px; line-height: 24px; font-family: m-light; font-weight: bold; transition: all 0.3s; box-shadow: 0px 0px 5px rgba(51,51,51,.5); -webkit-box-shadow: 0px 0px 5px rgba(51,51,51,.5); display: inline-block; padding: 0 10px; margin-right: 5px; font-size: 0.9rem}
+.icon_explain_wrap>div{background: #f1f1f1; height: 24px; border-radius: 16px; line-height: 24px; font-family: m-light; font-weight: bold; transition: all 0.3s; box-shadow: 0px 0px 5px rgba(51,51,51,.5); -webkit-box-shadow: 0px 0px 5px rgba(51,51,51,.5); display: inline-block; padding: 0 10px; margin-right: 5px; font-size: 0.8rem}
 .icon_explain_wrap .info_explain{opacity: 0;}
 .icon_explain_wrap .view_more_explain{opacity: 0}
 .icon_explain_wrap .link_explain{opacity: 0}
